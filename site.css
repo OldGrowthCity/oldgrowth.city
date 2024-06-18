@@ -1,0 +1,170 @@
+html {
+  font-family: "Fira Sans", sans-serif;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  display: flex;
+}
+
+body {
+  /* Position and center the image to scale nicely on all screens */
+  background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.4)), url("background.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  min-height: 100%;
+  min-width: 100%;
+
+  position: relative;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.6em;
+
+}
+
+h4 {
+  font-size: 1.4em;
+  margin: 1em;
+  text-align: center;
+}
+
+a, p {
+  font-size: 1.2em;
+}
+
+main {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  padding: 2em;
+  min-height: calc(100vh - 4em);
+  min-width: calc(100vw - 4em);
+}
+
+nav {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-image: linear-gradient(rgba(136, 216, 145, 0.7), rgba(136, 216, 145, 0.2) 70%, transparent);
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5em 6em;
+  min-height: calc(50vh - 4em - 3em);
+  min-width: calc(100vw - 4em - 12em);
+}
+
+p {
+  text-align: center;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scroll {
+  overflow-y: auto;
+}
+
+.scroll-border {
+  border:  #fce3f7 solid 0.2em;
+  border-radius: 15px;
+  min-height: 60vh;
+  padding: 1em 2em 0 2em;
+}
+
+/* For browsers that support `scrollbar-*` properties */
+@supports (scrollbar-color: auto) {
+  .scroll {
+    scrollbar-color: #88d891 transparent;
+  }
+}
+
+/* Otherwise, use `::-webkit-scrollbar-*` pseudo-elements */
+@supports selector(::-webkit-scrollbar) {
+  .scroll::-webkit-scrollbar {
+    background: transparent;
+  }
+  .scroll::-webkit-scrollbar-thumb {
+    background: #88d891;
+  }
+}
+
+/* media queries */
+@media (min-width:20em)  { /* smartphones, iPhone, portrait 480x320 phones */ 
+  .mobile-only {
+    display: initial;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  .scroll {
+    margin: 0 0.5em;
+    width: calc(100vw - 1em);
+    height: calc(100vh - 14em);
+  } 
+
+  main {
+    padding: 0.5em;
+    min-height: calc(100vh - 1em);
+    min-width: calc(100vw - 1em);
+  }
+
+  nav {
+    padding: 0.5em;
+    min-height: calc(30vh);
+    min-width: calc(100vw - 2em);
+  }
+}
+
+@media (min-width:30em)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ 
+  .mobile-only {
+    display: none;
+  }
+
+  .desktop-only {
+    display: initial;
+  }
+
+  main {
+    padding: 1em;
+    min-height: calc(100vh - 2em);
+    min-width: calc(100vw - 2em);
+  }
+
+  nav {
+    padding: 1.5em 3em;
+    min-height: calc(10vh);
+    min-width: calc(100vw - 2em - 6em );
+  }
+
+     .scroll {
+      margin: 0 3.5em
+      height: calc(50vh - 7em);
+      width: calc(100vw - 14em);
+     }
+}
+
+@media (min-width:40em)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
+@media (min-width:60em)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+@media (min-width:64em) { /* big landscape tablets, laptops, and desktops */ }
+@media (min-width:80em) { /* hi-res laptops and desktops */ }
